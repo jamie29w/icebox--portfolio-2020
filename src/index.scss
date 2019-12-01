@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Nunito&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Alegreya', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Nunito', cursive;
+  padding: 0 16px;
+  margin: 0;
+}
+
+p {
+  padding: 0 16px;
+  margin: 0;
+}
