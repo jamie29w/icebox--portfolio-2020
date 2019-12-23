@@ -1,0 +1,45 @@
+.home {
+  display: grid;
+  color: #fff;
+  width: 100%;
+  grid-template-areas:
+    'hero-grid'
+    'skills-grid';
+
+  .hero-grid {
+    grid-area: hero-grid;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: grid;
+    padding: 75px 16px;
+    align-content: space-around;
+    background: #2d2d2d;
+  }
+
+  .skills-grid {
+    grid-area: skills-grid;
+    background: #062f4f;
+    min-height: 100vh;
+    display: grid;
+    padding: 25px 16px;
+    align-content: space-around;
+  }
+
+  .text--red {
+    color: #ff0033;
+  }
+
+  .link--discrete {
+    text-decoration: none;
+  }
+
+  .hidden {
+    display: none;
+    opacity: 0;
+  }
+
+  @media (min-width: 840px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'skills-grid hero-grid';
+  }
+}
