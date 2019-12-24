@@ -1,0 +1,17 @@
+.nav-wrapper {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  text-align: center;
+  align-items: center;
+
+  & > a {
+    color: #fff;
+    text-decoration: none;
+  }
+}

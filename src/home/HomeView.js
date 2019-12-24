@@ -9,6 +9,7 @@ import '../styles/Home.scss';
 export default function HomeView() {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
   const [screenWidth, setScreenWidth] = useState();
+  const [lkdHasArrived, setLkdHasArrived] = useState(false);
   const animationSpeed = 0.6;
 
   const heroGridRef = useRef(null);
@@ -45,23 +46,24 @@ export default function HomeView() {
         animationSpeed,
         { x: screenWidth * 1.1, display: 'hidden', opacity: 0 },
         '-=0.2'
-      );
+      )
+      .call(() => setLkdHasArrived(true));
   }, [screenWidth]);
 
   useEffect(() => {
-    if (hasScrolledDown) {
+    if (lkdHasArrived && hasScrolledDown) {
       const lkdAnimateToTop = new TimelineMax();
 
       lkdAnimateToTop
         .to(heroText1Ref.current, 0.3, {
-          bottom: '0%',
+          bottom: '10%',
           ease: Power3.easeIn,
         })
         .to(
           heroText2Ref.current,
           0.3,
           {
-            bottom: '0%',
+            bottom: '10%',
             ease: Power2.easeIn,
           },
           0
@@ -72,6 +74,15 @@ export default function HomeView() {
           ease: Power1.easeIn,
           padding: '16px',
         })
+        .to(
+          [heroText1Ref.current, heroText2Ref.current, heroText3Ref.current],
+          animationSpeed,
+          {
+            bottom: 0,
+            ease: Power1.easeIn,
+          },
+          `-=${animationSpeed}`
+        )
         .call(() => updateTextOfRef('jamie', heroText1Ref.current))
         .to(
           heroText2Ref.current,
@@ -85,11 +96,10 @@ export default function HomeView() {
         )
         .call(() => updateTextOfRef('WOODMANCY', heroText3Ref.current))
         .to(heroText3Ref.current, animationSpeed, {
-          right: screenWidth < 400 ? 16 : null,
-          left: screenWidth > 400 ? 100 : null,
+          left: 100,
         });
     }
-  }, [hasScrolledDown, screenWidth]);
+  }, [hasScrolledDown, screenWidth, lkdHasArrived]);
 
   const updateTextOfRef = (newText, ref) => {
     ref.innerText = newText;
