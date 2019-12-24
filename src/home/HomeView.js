@@ -89,7 +89,7 @@ export default function HomeView() {
           left: screenWidth > 400 ? 100 : null,
         });
     }
-  }, [hasScrolledDown]);
+  }, [hasScrolledDown, screenWidth]);
 
   const updateTextOfRef = (newText, ref) => {
     ref.innerText = newText;
