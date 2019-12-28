@@ -25,13 +25,13 @@
     }
 
     .hero-text1 {
-      bottom: 10%;
+      bottom: 20%;
     }
     .hero-text2 {
-      bottom: 5%;
+      bottom: 15%;
     }
     .hero-text3 {
-      bottom: 0%;
+      bottom: 10%;
     }
   }
 
@@ -42,7 +42,7 @@
     background: #062f4f;
     min-height: calc(100vh - 75px);
     display: grid;
-    padding: 25px 16px;
+    padding: 0 16px 75px;
     align-content: space-around;
   }
 
