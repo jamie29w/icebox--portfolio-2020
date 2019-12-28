@@ -1,0 +1,28 @@
+.portfolio--wrapper {
+  display: grid;
+  background: #2d2d2d;
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-rows: 75px calc(100vh - 150px) 75px;
+  text-align: center;
+
+  h1 {
+    padding: 16px;
+  }
+
+  .projects-grid {
+    overflow: auto;
+    padding: 16px;
+
+    h2,
+    p {
+      margin-bottom: 16px;
+    }
+
+    .project--image {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+  }
+}
