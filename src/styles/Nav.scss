@@ -1,9 +1,5 @@
-.nav-wrapper {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-
+.nav--wrapper {
+  justify-self: center;
   display: flex;
   justify-content: space-between;
   width: 300px;

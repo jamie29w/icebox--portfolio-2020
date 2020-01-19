@@ -1,6 +1,4 @@
 .home {
-  box-sizing: border-box;
-
   display: grid;
   color: #fff;
   width: 100%;
@@ -42,7 +40,7 @@
     background: #062f4f;
     min-height: calc(100vh - 75px);
     display: grid;
-    padding: 0 16px 75px;
+    padding: 0 16px;
     align-content: space-around;
   }
 

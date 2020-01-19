@@ -5,6 +5,7 @@ import { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap/all';
 import { skillsList } from '../lib/skillsList';
 
 import '../styles/Home.scss';
+import Nav from '../nav/Nav';
 
 export default function HomeView() {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
@@ -12,10 +13,22 @@ export default function HomeView() {
   const [lkdHasArrived, setLkdHasArrived] = useState(false);
   const animationSpeed = 0.6;
 
+  const homeViewWrapperRef = useRef(null);
   const heroGridRef = useRef(null);
   const heroText1Ref = useRef(null);
   const heroText2Ref = useRef(null);
   const heroText3Ref = useRef(null);
+
+  useEffect(() => {
+    const fadeInTimeline = new TimelineMax();
+
+    fadeInTimeline.fromTo(
+      homeViewWrapperRef.current,
+      0.5,
+      { opacity: 0.5 },
+      { opacity: 1 }
+    );
+  }, []);
 
   useEffect(() => {
     const width =
@@ -114,7 +127,7 @@ export default function HomeView() {
   };
 
   return (
-    <div onWheel={handleScroll} className='main-view home'>
+    <div ref={homeViewWrapperRef} onWheel={handleScroll} className='home'>
       {screenWidth && (
         <div ref={heroGridRef} className='hero-grid'>
           <h1 className='hero-text hero-text1' ref={heroText1Ref}>
@@ -138,6 +151,7 @@ export default function HomeView() {
         <Link className='link--discrete text--red' to='/portfolio'>
           <h2>Let me prove it</h2>
         </Link>
+        <Nav />
       </div>
     </div>
   );
