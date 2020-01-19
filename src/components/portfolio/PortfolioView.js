@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import gsap, { TimelineMax } from 'gsap';
 
 import Nav from '../nav/Nav';
-import '../styles/Portfolio.scss';
 
-import { portfolioData } from '../lib/dummyPortfolioData';
+import { portfolioData } from '../../lib/dummyPortfolioData';
+
+import './styles.scss';
 
 export default function PortfolioView() {
   const portfolioWrapperRef = useRef(null);
