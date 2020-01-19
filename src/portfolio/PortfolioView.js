@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { TimelineMax } from 'gsap';
+import gsap, { TimelineMax } from 'gsap';
 
 import Nav from '../nav/Nav';
 import '../styles/Portfolio.scss';
@@ -8,6 +8,8 @@ import { portfolioData } from '../lib/dummyPortfolioData';
 
 export default function PortfolioView() {
   const portfolioWrapperRef = useRef(null);
+
+  gsap.registerPlugin(TimelineMax);
 
   useEffect(() => {
     const fadeInTimeline = new TimelineMax();

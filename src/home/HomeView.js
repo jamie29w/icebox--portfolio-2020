@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
-import { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
+import gsap, { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
 
 import { skillsList } from '../lib/skillsList';
 
-import '../styles/Home.scss';
 import Nav from '../nav/Nav';
+
+import '../styles/Home.scss';
 
 export default function HomeView() {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
@@ -18,6 +19,8 @@ export default function HomeView() {
   const heroText1Ref = useRef(null);
   const heroText2Ref = useRef(null);
   const heroText3Ref = useRef(null);
+
+  gsap.registerPlugin(TimelineMax, Power1, Power2, Power3, Power4);
 
   useEffect(() => {
     const fadeInTimeline = new TimelineMax();
