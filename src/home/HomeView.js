@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
-import { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap/all';
+import { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
 
 import { skillsList } from '../lib/skillsList';
 

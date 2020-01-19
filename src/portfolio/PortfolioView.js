@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { TimelineMax } from 'gsap/all';
+import { TimelineMax } from 'gsap';
 
 import Nav from '../nav/Nav';
 import '../styles/Portfolio.scss';
