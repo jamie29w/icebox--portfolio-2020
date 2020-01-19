@@ -4,8 +4,9 @@ import gsap, { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
 
 import { skillsList } from '../lib/skillsList';
 
-import '../styles/Home.scss';
 import Nav from '../nav/Nav';
+
+import '../styles/Home.scss';
 
 export default function HomeView() {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
