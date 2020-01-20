@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router } from '@reach/router';
 
-import HomeView from './home/HomeView';
-import NowView from './now/NowView';
-import PortfolioView from './portfolio/PortfolioView';
+import HomeView from './components/home/HomeView';
+import NowView from './components/now/NowView';
+import PortfolioView from './components/portfolio/PortfolioView';
 
-import './styles/App.scss';
+import './App.scss';
 import './index.scss';
 
 export default function App() {

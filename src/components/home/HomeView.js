@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
 import gsap, { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
 
-import { skillsList } from '../lib/skillsList';
-
 import Nav from '../nav/Nav';
 
-import '../styles/Home.scss';
+import { skillsList } from '../../lib/skillsList';
+
+import './styles.scss';
 
 export default function HomeView() {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
@@ -154,8 +154,8 @@ export default function HomeView() {
         <Link className='link--discrete text--red' to='/portfolio'>
           <h2>Let me prove it</h2>
         </Link>
-        <Nav />
       </div>
+      <Nav />
     </div>
   );
 }

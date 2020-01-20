@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-import '../styles/Nav.scss';
+import './styles.scss';
 
 export default function Nav() {
   return (
