@@ -16,17 +16,17 @@ export default function HomeView() {
   const animationSpeed = 0.6;
 
   const handleScroll = e => {
-    // const { nativeEvent } = e;
-    // if (nativeEvent.wheelDelta > 0) {
-    // } else {
-    setHasScrolledDown(true);
-    // }
+    const { nativeEvent } = e;
+    if (nativeEvent.wheelDelta > 0) {
+    } else {
+      setHasScrolledDown(true);
+    }
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   const homeViewWrapperRef = useRef(null);
   const heroGridRef = useRef(null);
@@ -144,8 +144,8 @@ export default function HomeView() {
   // };
 
   return (
-    <div ref={homeViewWrapperRef} className='home'>
-      {/* <div ref={homeViewWrapperRef} onWheel={handleScroll} className='home'> */}
+    <Div100vh ref={homeViewWrapperRef} onWheel={handleScroll} className='home'>
+      {/* <Div100vh ref={homeViewWrapperRef} className='home'> */}
       {screenWidth && (
         <div ref={heroGridRef} className='hero-grid'>
           <h1 className='hero-text hero-text1' ref={heroText1Ref}>
@@ -171,6 +171,6 @@ export default function HomeView() {
         </Link>
       </div>
       <Nav />
-    </div>
+    </Div100vh>
   );
 }
