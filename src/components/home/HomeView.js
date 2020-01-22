@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
 import gsap, { TimelineMax, Power1, Power2, Power3, Power4 } from 'gsap';
+import Div100vh from 'react-div-100vh';
 
 import Nav from '../nav/Nav';
 
@@ -13,6 +14,19 @@ export default function HomeView() {
   const [screenWidth, setScreenWidth] = useState();
   const [lkdHasArrived, setLkdHasArrived] = useState(false);
   const animationSpeed = 0.6;
+
+  const handleScroll = e => {
+    // const { nativeEvent } = e;
+    // if (nativeEvent.wheelDelta > 0) {
+    // } else {
+    setHasScrolledDown(true);
+    // }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const homeViewWrapperRef = useRef(null);
   const heroGridRef = useRef(null);
@@ -121,16 +135,17 @@ export default function HomeView() {
     ref.innerText = newText;
   };
 
-  const handleScroll = e => {
-    const { nativeEvent } = e;
-    if (nativeEvent.wheelDelta > 0) {
-    } else {
-      setHasScrolledDown(true);
-    }
-  };
+  // const handleScroll = e => {
+  //   const { nativeEvent } = e;
+  //   if (nativeEvent.wheelDelta > 0) {
+  //   } else {
+  //     setHasScrolledDown(true);
+  //   }
+  // };
 
   return (
-    <div ref={homeViewWrapperRef} onWheel={handleScroll} className='home'>
+    <div ref={homeViewWrapperRef} className='home'>
+      {/* <div ref={homeViewWrapperRef} onWheel={handleScroll} className='home'> */}
       {screenWidth && (
         <div ref={heroGridRef} className='hero-grid'>
           <h1 className='hero-text hero-text1' ref={heroText1Ref}>
